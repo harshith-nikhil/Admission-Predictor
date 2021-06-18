@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admittance Prediction</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        <form action="{{ url_for('predict') }}" method="post">   
+            <input type="text" placeholder="GRE Score" id='gre' name='gre'>
+            <br>
+            <input type="text" placeholder="TOEFL Score" id='toefl' name='toefl'>
+            <br>
+            <input type="text" placeholder="CGPA" id='gpa' name='gpa'>
+            <br>
+            <input type="text" placeholder="University Rank" id='ur' name='ur'>
+            <br>
+            <input type="text" placeholder="SOP Grade" id='sop' name='sop'>
+            <br>
+            <input type="text" placeholder="LOR Grade" id='lor' name='lor'>
+            <br>
+            <button type="submit">Predict Chance</button>
+        </form>
+        <br>
+        <br>
+        {{ prediction_text }}
+    </div>
+</body>
+</html>
